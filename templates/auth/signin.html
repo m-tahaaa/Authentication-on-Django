@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signin</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: hsl(0, 0%, 100%);
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            background-color: #4CAF50;
+            width: 25%;
+            padding: 10px;
+            color: black;
+            border: none;
+            font-size: 12px;
+        }
+        label {
+            font-size: 16px;
+        }
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        input[type=text], input[type=password] {
+            width: 45%; /* Adjusted width to fit side by side */
+            font-size: 12px;
+            margin: 8px 0px;
+            padding: 10px 15px;
+            display: inline-block;
+            border: 2px solid rgb(0, 0, 0);
+            box-sizing: border-box;
+        }
+        button:hover {
+            opacity: 0.7;
+        }
+        .container {
+            padding: 20px;
+            background-color: white;
+            text-align: right;
+            width: 300px; /* Fixed width for the container */
+        }
+        .imgcontainer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img.imgedc {
+            width: 250px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {% load static %}
+        <div class="container">
+            <div class="imgcontainer">
+                <img src="{% static 'download.png' %}" alt="imgedc" class="imgedc">
+            </div>
+            <label for='email'><b>Email: </b></label>
+            <input type="email" placeholder="Email" name="email" required>
+            <label for='password'><b>Password: </b></label>
+            <input type="password" placeholder="Password" name="password" required><br>
+            <button type="submit"><b>Signin</b></button><br>
+            Don't have an account? <a href="http://localhost:8000/signup"> SignUp </a>
+        </div>
+    </form>
+</body>
+</html>
