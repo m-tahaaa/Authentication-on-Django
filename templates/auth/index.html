@@ -4,13 +4,8 @@
 
     <h3>Welcome to EDC Authentication System</h3>
     
-    {% if user.is_authenticated %}
       <h1>Welcome, {{ user.first_name }} {{ user.last_name }}!</h1>
       <a href="http://localhost:8000/signout"> Signout </a>
-    {% else %}
-      <h1>Welcome to the index page!</h1>
-    {% endif %}
-    <script src="index.js"></script>
 
   </body>
 </html>
