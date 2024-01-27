@@ -26,7 +26,7 @@ def signup(request):
 
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email already registered")
-            return redirect('home')
+            return render(request, 'auth/signup.html') 
 
         myuser = User.objects.create_user(username=email, email=email, password=password)
         myuser.first_name = first_name
